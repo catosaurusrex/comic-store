@@ -8,7 +8,7 @@ namespace comicBookGallery.Data
 {
     public class ComicBookRepository
     {
-        private static ComicBook[] _comicBook = new ComicBook[]
+        private static ComicBook[] _comicBooks = new ComicBook[]
         {
               new ComicBook()
     {   Id = 1,
@@ -55,11 +55,18 @@ namespace comicBookGallery.Data
         Favorite = false
     }
     };
+
+        public ComicBook[] GetComicBooks()
+        {
+            return _comicBooks;
+        }
+
+
         public ComicBook GetComicBook(int id)
         {
             ComicBook comicBookToReturn = null;
 
-            foreach (var comicbook in _comicBook)
+            foreach (var comicbook in _comicBooks)
             {
                 if (comicbook.Id == id)
                 {
